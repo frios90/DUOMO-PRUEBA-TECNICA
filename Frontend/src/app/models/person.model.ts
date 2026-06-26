@@ -9,14 +9,3 @@ export interface Person {
   regionName?: string;
   communeName?: string;
 }
-
-export interface Region {
-  id: string;
-  name: string;
-  communes: Commune[];
-}
-
-export interface Commune {
-  id: string;
-  name: string;
-}

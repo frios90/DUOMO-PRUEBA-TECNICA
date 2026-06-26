@@ -6,11 +6,9 @@
     --duomo-black: #000000;
     --duomo-gray: #e9e9e9;
     --duomo-white: #ffffff;
-
     --duomo-text: #111111;
     --duomo-border: #d6d6d6;
 }
-
 
 body {
     background-color: var(--duomo-gray);
@@ -19,21 +17,15 @@ body {
     min-height: 100vh;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
+h1,h2,h3,h4,h5,h6,
 .card-title,
 .modal-title {
-    font-family: 'Montserrat', sans-serif;
+
     font-weight: 800;
     text-transform: uppercase;
     color: var(--duomo-black);
     letter-spacing: -1px;
 }
-
 
 .card {
     border: none;
@@ -46,7 +38,7 @@ h6,
     background: var(--duomo-yellow);
     color: black;
     border: none;
-    font-family: 'Montserrat', sans-serif;
+
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -65,7 +57,6 @@ label {
 .form-select {
     border: 2px solid black;
     border-radius: 0;
-    font-family: 'Space Mono', monospace;
     padding: .75rem;
 }
 
@@ -76,33 +67,23 @@ label {
 }
 
 .btn {
-    border-radius: 0;
-    font-family: 'Montserrat', sans-serif;
+    border-radius: 10px;
+
     font-weight: 700;
     text-transform: uppercase;
 }
 
 .btn-primary {
     background: black;
+    border-radius: 10px;
     border: 2px solid black;
 }
 
 .btn-primary:hover {
     background: var(--duomo-yellow);
+    border-radius: 10px;
     border-color: var(--duomo-yellow);
     color: black;
-}
-
-.btn-success {
-    background: var(--duomo-yellow);
-    border-color: var(--duomo-yellow);
-    color: black;
-}
-
-.btn-success:hover {
-    background: black;
-    border-color: black;
-    color: white;
 }
 
 .btn-danger {
@@ -121,7 +102,7 @@ label {
 
 .table thead th {
     border: none;
-    font-family: 'Montserrat', sans-serif;
+
     text-transform: uppercase;
     font-size: .9rem;
 }
@@ -134,26 +115,6 @@ label {
 .table-hover tbody tr:hover {
     background: rgba(245, 196, 0, 0.15);
     transition: .2s;
-}
-
-.alert {
-    border-radius: 0;
-    border: none;
-}
-
-.alert-success {
-    background: var(--duomo-yellow);
-    color: black;
-}
-
-.alert-danger {
-    background: #dc3545;
-    color: white;
-}
-
-.modal-content {
-    border-radius: 0;
-    border: none;
 }
 
 .modal-header {
@@ -172,49 +133,19 @@ label {
 .navbar-brand,
 .nav-link {
     color: white !important;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     text-transform: uppercase;
-}
-
-.nav-link:hover {
-    color: var(--duomo-yellow) !important;
-}
-
-.page-link {
-    color: black;
-    border-radius: 0;
-}
-
-.page-item.active .page-link {
-    background: black;
-    border-color: black;
 }
 
 .crud-container {
     background: white;
     padding: 2rem;
-    border: none;
+    border-radius: 0px 0px 10px 10px;
+    padding: 50px 300px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .crud-title {
     font-size: 2rem;
     margin-bottom: 2rem;
-}
-
-.badge {
-    border-radius: 0;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.badge.bg-success {
-    background: var(--duomo-yellow) !important;
-    color: black;
-}
-
-.btn,
-.form-control,
-.form-select,
-.table tr {
-    transition: all .2s ease;
 }

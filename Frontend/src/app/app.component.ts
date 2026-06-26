@@ -4,9 +4,7 @@ import { PersonListComponent } from './components/person-list/person-list.compon
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    PersonListComponent
-  ],
+  imports: [PersonListComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })

@@ -1,14 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Person, Region, Commune } from '../models/person.model';
-
+import { Person } from '../models/person.model';
+import { Region } from '../models/region.model';
+import { Commune } from '../models/commune.model';
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
   private apiUrl = 'http://localhost:8080/api';
-  
+
   constructor(private http: HttpClient) {}
 
   getPeople(): Observable<Person[]> {
