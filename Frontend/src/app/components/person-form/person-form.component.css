@@ -1,3 +1,7 @@
+.progress-box {
+  font-size: 14px
+
+}
 .progress {
   border-radius: 10px;
   background-color: #e9ecef;
@@ -6,6 +10,7 @@
 .progress-bar {
   border-radius: 10px;
   transition: width 0.3s ease-in-out;
+
 }
 
 .input-group-text {
@@ -18,6 +23,10 @@
   transition: opacity 0.2s ease;
 }
 
+.save-btn {
+  background-color: #f5a623; border-color: #f5a623; color: #0f2b3d;
+}
+
 .form-control.is-valid {
   border-color: #28a745;
   background-image: none;
@@ -26,10 +35,6 @@
 .form-control.is-invalid {
   border-color: #dc3545;
   background-image: none;
-}
-
-.modal-lg {
-  max-width: 700px;
 }
 
 .badge {

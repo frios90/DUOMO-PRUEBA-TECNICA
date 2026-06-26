@@ -12,172 +12,172 @@
           <div *ngIf="error" class="alert alert-danger">
             <i class="fas fa-exclamation-circle me-2"></i> {{ error }}
           </div>
-
-          <div class="mb-3">
-            <label class="form-label"><i class="fas fa-user me-1"></i> Nombre *</label>
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                [(ngModel)]="person.name"
-                name="name"
-                (input)="validateName()"
-                required
-                minlength="2"
-                placeholder="Ingrese el nombre"
-                [class.is-valid]="validations.name.valid && validations.name.touched"
-                [class.is-invalid]="!validations.name.valid && validations.name.touched">
-              <span class="input-group-text">
-                <i *ngIf="validations.name.valid && validations.name.touched" class="fas fa-check text-success"></i>
-                <i *ngIf="!validations.name.valid && validations.name.touched" class="fas fa-times text-danger"></i>
-                <i *ngIf="!validations.name.touched" class="fas fa-minus text-muted"></i>
-              </span>
+          <div class="row">
+            <div class="col-6 mb-3">
+              <label class="form-label"><i class="fas fa-user me-1"></i> Nombre *</label>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="person.name"
+                  name="name"
+                  (input)="validateName()"
+                  required
+                  minlength="2"
+                  placeholder="Ingrese el nombre"
+                  [class.is-valid]="validations.name.valid && validations.name.touched"
+                  [class.is-invalid]="!validations.name.valid && validations.name.touched">
+                <span class="input-group-text">
+                  <i *ngIf="validations.name.valid && validations.name.touched" class="fas fa-check text-success"></i>
+                  <i *ngIf="!validations.name.valid && validations.name.touched" class="fas fa-times text-danger"></i>
+                  <i *ngIf="!validations.name.touched" class="fas fa-minus text-muted"></i>
+                </span>
+              </div>
+              <small *ngIf="!validations.name.valid && validations.name.touched" class="text-danger">
+                <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.name.message }}
+              </small>
+              <small *ngIf="validations.name.valid && validations.name.touched" class="text-success"><i class="fas fa-check me-1"></i> Nombre válido</small>
             </div>
-            <small *ngIf="!validations.name.valid && validations.name.touched" class="text-danger">
-              <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.name.message }}
-            </small>
-            <small *ngIf="validations.name.valid && validations.name.touched" class="text-success"><i class="fas fa-check me-1"></i> Nombre válido</small>
-          </div>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fas fa-user me-1"></i> Apellido *</label>
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                [(ngModel)]="person.lastName"
-                name="lastName"
-                (input)="validateLastName()"
-                required
-                minlength="2"
-                placeholder="Ingrese el apellido"
-                [class.is-valid]="validations.lastName.valid && validations.lastName.touched"
-                [class.is-invalid]="!validations.lastName.valid && validations.lastName.touched">
-              <span class="input-group-text">
-                <i *ngIf="validations.lastName.valid && validations.lastName.touched" class="fas fa-check text-success"></i>
-                <i *ngIf="!validations.lastName.valid && validations.lastName.touched" class="fas fa-times text-danger"></i>
-                <i *ngIf="!validations.lastName.touched" class="fas fa-minus text-muted"></i>
-              </span>
+            <div class="col-6 mb-3">
+              <label class="form-label"><i class="fas fa-user me-1"></i> Apellido *</label>
+              <div class="input-group">
+                <input
+                  type="text"
+                  class="form-control"
+                  [(ngModel)]="person.lastName"
+                  name="lastName"
+                  (input)="validateLastName()"
+                  required
+                  minlength="2"
+                  placeholder="Ingrese el apellido"
+                  [class.is-valid]="validations.lastName.valid && validations.lastName.touched"
+                  [class.is-invalid]="!validations.lastName.valid && validations.lastName.touched">
+                <span class="input-group-text">
+                  <i *ngIf="validations.lastName.valid && validations.lastName.touched" class="fas fa-check text-success"></i>
+                  <i *ngIf="!validations.lastName.valid && validations.lastName.touched" class="fas fa-times text-danger"></i>
+                  <i *ngIf="!validations.lastName.touched" class="fas fa-minus text-muted"></i>
+                </span>
+              </div>
+              <small *ngIf="!validations.lastName.valid && validations.lastName.touched" class="text-danger">
+                <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.lastName.message }}
+              </small>
+              <small *ngIf="validations.lastName.valid && validations.lastName.touched" class="text-success">
+                <i class="fas fa-check me-1"></i> Apellido válido
+              </small>
             </div>
-            <small *ngIf="!validations.lastName.valid && validations.lastName.touched" class="text-danger">
-              <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.lastName.message }}
-            </small>
-            <small *ngIf="validations.lastName.valid && validations.lastName.touched" class="text-success">
-              <i class="fas fa-check me-1"></i> Apellido válido
-            </small>
-          </div>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fas fa-envelope me-1"></i> Email *</label>
-            <div class="input-group">
-              <input
-                type="email"
-                class="form-control"
-                [(ngModel)]="person.email"
-                name="email"
-                (input)="validateEmail()"
-                required
-                email
-                placeholder="ejemplo@email.com"
-                [class.is-valid]="validations.email.valid && validations.email.touched"
-                [class.is-invalid]="!validations.email.valid && validations.email.touched">
-              <span class="input-group-text">
-                <i *ngIf="validations.email.valid && validations.email.touched" class="fas fa-check text-success"></i>
-                <i *ngIf="!validations.email.valid && validations.email.touched" class="fas fa-times text-danger"></i>
-                <i *ngIf="!validations.email.touched" class="fas fa-minus text-muted"></i>
-              </span>
+            <div class="col-6 mb-3">
+              <label class="form-label"><i class="fas fa-envelope me-1"></i> Email *</label>
+              <div class="input-group">
+                <input
+                  type="email"
+                  class="form-control"
+                  [(ngModel)]="person.email"
+                  name="email"
+                  (input)="validateEmail()"
+                  required
+                  email
+                  placeholder="ejemplo@email.com"
+                  [class.is-valid]="validations.email.valid && validations.email.touched"
+                  [class.is-invalid]="!validations.email.valid && validations.email.touched">
+                <span class="input-group-text">
+                  <i *ngIf="validations.email.valid && validations.email.touched" class="fas fa-check text-success"></i>
+                  <i *ngIf="!validations.email.valid && validations.email.touched" class="fas fa-times text-danger"></i>
+                  <i *ngIf="!validations.email.touched" class="fas fa-minus text-muted"></i>
+                </span>
+              </div>
+              <small *ngIf="!validations.email.valid && validations.email.touched" class="text-danger">
+                <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.email.message }}
+              </small>
+              <small *ngIf="validations.email.valid && validations.email.touched" class="text-success"><i class="fas fa-check me-1"></i> Email válido</small>
             </div>
-            <small *ngIf="!validations.email.valid && validations.email.touched" class="text-danger">
-              <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.email.message }}
-            </small>
-            <small *ngIf="validations.email.valid && validations.email.touched" class="text-success"><i class="fas fa-check me-1"></i> Email válido</small>
-          </div>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fas fa-calendar me-1"></i> Edad *</label>
-            <div class="input-group">
-              <input
-                type="number"
-                class="form-control"
-                [(ngModel)]="person.age"
-                name="age"
-                (input)="validateAge()"
-                required
-                min="18"
-                max="150"
-                placeholder="18"
-                [class.is-valid]="validations.age.valid && validations.age.touched"
-                [class.is-invalid]="!validations.age.valid && validations.age.touched">
-              <span class="input-group-text">
-                <i *ngIf="validations.age.valid && validations.age.touched" class="fas fa-check text-success"></i>
-                <i *ngIf="!validations.age.valid && validations.age.touched" class="fas fa-times text-danger"></i>
-                <i *ngIf="!validations.age.touched" class="fas fa-minus text-muted"></i>
-              </span>
+            <div class="col-6 mb-3">
+              <label class="form-label"><i class="fas fa-calendar me-1"></i> Edad *</label>
+              <div class="input-group">
+                <input
+                  type="number"
+                  class="form-control"
+                  [(ngModel)]="person.age"
+                  name="age"
+                  (input)="validateAge()"
+                  required
+                  min="18"
+                  max="150"
+                  placeholder="18"
+                  [class.is-valid]="validations.age.valid && validations.age.touched"
+                  [class.is-invalid]="!validations.age.valid && validations.age.touched">
+                <span class="input-group-text">
+                  <i *ngIf="validations.age.valid && validations.age.touched" class="fas fa-check text-success"></i>
+                  <i *ngIf="!validations.age.valid && validations.age.touched" class="fas fa-times text-danger"></i>
+                  <i *ngIf="!validations.age.touched" class="fas fa-minus text-muted"></i>
+                </span>
+              </div>
+              <small *ngIf="!validations.age.valid && validations.age.touched" class="text-danger">
+                <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.age.message }}
+              </small>
+              <small *ngIf="validations.age.valid && validations.age.touched" class="text-success">
+                <i class="fas fa-check me-1"></i> Edad válida
+              </small>
             </div>
-            <small *ngIf="!validations.age.valid && validations.age.touched" class="text-danger">
-              <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.age.message }}
-            </small>
-            <small *ngIf="validations.age.valid && validations.age.touched" class="text-success">
-              <i class="fas fa-check me-1"></i> Edad válida
-            </small>
-          </div>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fas fa-map-marker-alt me-1"></i> Región *</label>
-            <div class="input-group">
-              <select
-                class="form-control"
-                [(ngModel)]="person.regionId"
-                name="regionId"
-                (ngModelChange)="onRegionChange()"
-                required
-                [class.is-valid]="validations.region.valid && validations.region.touched"
-                [class.is-invalid]="!validations.region.valid && validations.region.touched">
-                <option value="">Seleccione una región</option>
-                <option *ngFor="let region of regions" [value]="region.id">
-                  {{ region.name }}
-                </option>
-              </select>
-              <span class="input-group-text">
-                <i *ngIf="validations.region.valid && validations.region.touched" class="fas fa-check text-success"></i>
-                <i *ngIf="!validations.region.valid && validations.region.touched" class="fas fa-times text-danger"></i>
-                <i *ngIf="!validations.region.touched" class="fas fa-minus text-muted"></i>
-              </span>
+            <div class="mb-3">
+              <label class="form-label"><i class="fas fa-map-marker-alt me-1"></i> Región *</label>
+              <div class="input-group">
+                <select
+                  class="form-control"
+                  [(ngModel)]="person.regionId"
+                  name="regionId"
+                  (ngModelChange)="onRegionChange()"
+                  required
+                  [class.is-valid]="validations.region.valid && validations.region.touched"
+                  [class.is-invalid]="!validations.region.valid && validations.region.touched">
+                  <option value="">Seleccione una región</option>
+                  <option *ngFor="let region of regions" [value]="region.id">
+                    {{ region.name }}
+                  </option>
+                </select>
+                <span class="input-group-text">
+                  <i *ngIf="validations.region.valid && validations.region.touched" class="fas fa-check text-success"></i>
+                  <i *ngIf="!validations.region.valid && validations.region.touched" class="fas fa-times text-danger"></i>
+                  <i *ngIf="!validations.region.touched" class="fas fa-minus text-muted"></i>
+                </span>
+              </div>
+              <small *ngIf="!validations.region.valid && validations.region.touched" class="text-danger">
+                <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.region.message }}
+              </small>
+              <small *ngIf="validations.region.valid && validations.region.touched" class="text-success">
+                <i class="fas fa-check me-1"></i> Región seleccionada
+              </small>
             </div>
-            <small *ngIf="!validations.region.valid && validations.region.touched" class="text-danger">
-              <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.region.message }}
-            </small>
-            <small *ngIf="validations.region.valid && validations.region.touched" class="text-success">
-              <i class="fas fa-check me-1"></i> Región seleccionada
-            </small>
-          </div>
 
-          <div class="mb-3">
-            <label class="form-label"><i class="fas fa-map-pin me-1"></i> Comuna *</label>
-            <div class="input-group">
-              <select
-                class="form-control"
-                [(ngModel)]="person.communeId"
-                name="communeId"
-                (ngModelChange)="validateCommune()"
-                required
-                [disabled]="!person.regionId"
-                [class.is-valid]="validations.commune.valid && validations.commune.touched"
-                [class.is-invalid]="!validations.commune.valid && validations.commune.touched">
-                <option value="">Seleccione una comuna</option>
-                <option *ngFor="let commune of communes" [value]="commune.id">{{ commune.name }}</option>
-              </select>
-              <span class="input-group-text">
-                <i *ngIf="validations.commune.valid && validations.commune.touched" class="fas fa-check text-success"></i>
-                <i *ngIf="!validations.commune.valid && validations.commune.touched" class="fas fa-times text-danger"></i>
-                <i *ngIf="!validations.commune.touched" class="fas fa-minus text-muted"></i>
-              </span>
+            <div class="mb-3">
+              <label class="form-label"><i class="fas fa-map-pin me-1"></i> Comuna *</label>
+              <div class="input-group">
+                <select
+                  class="form-control"
+                  [(ngModel)]="person.communeId"
+                  name="communeId"
+                  (ngModelChange)="validateCommune()"
+                  required
+                  [disabled]="!person.regionId"
+                  [class.is-valid]="validations.commune.valid && validations.commune.touched"
+                  [class.is-invalid]="!validations.commune.valid && validations.commune.touched">
+                  <option value="">Seleccione una comuna</option>
+                  <option *ngFor="let commune of communes" [value]="commune.id">{{ commune.name }}</option>
+                </select>
+                <span class="input-group-text">
+                  <i *ngIf="validations.commune.valid && validations.commune.touched" class="fas fa-check text-success"></i>
+                  <i *ngIf="!validations.commune.valid && validations.commune.touched" class="fas fa-times text-danger"></i>
+                  <i *ngIf="!validations.commune.touched" class="fas fa-minus text-muted"></i>
+                </span>
+              </div>
+              <small *ngIf="!validations.commune.valid && validations.commune.touched" class="text-danger"><i class="fas fa-exclamation-triangle me-1"></i> {{ validations.commune.message }}</small>
+              <small *ngIf="validations.commune.valid && validations.commune.touched" class="text-success"><i class="fas fa-check me-1"></i> Comuna seleccionada</small>
             </div>
-            <small *ngIf="!validations.commune.valid && validations.commune.touched" class="text-danger"><i class="fas fa-exclamation-triangle me-1"></i> {{ validations.commune.message }}</small>
-            <small *ngIf="validations.commune.valid && validations.commune.touched" class="text-success"><i class="fas fa-check me-1"></i> Comuna seleccionada</small>
           </div>
-
-          <div class="mb-4">
+          <div class="mb-4 progress-box">
             <div class="d-flex justify-content-between align-items-center mb-1">
               <span class="text-muted small"><i class="fas fa-check-circle me-1"></i> Progreso de validación</span>
               <span class="badge"
@@ -203,27 +203,17 @@
             <small class="text-muted" *ngIf="progress < 100"><i class="fas fa-info-circle me-1"></i>Completa todos los campos para habilitar el botón Guardar</small>
             <small class="text-success" *ngIf="progress === 100"><i class="fas fa-check-circle me-1"></i>¡Todos los campos son válidos!</small>
           </div>
-
           <div class="d-flex justify-content-end gap-2">
             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
               <i class="fas fa-times me-1"></i> Cancelar
             </button>
             <button
               type="submit"
-              class="btn btn-primary"
-              style="background-color: #f5a623; border-color: #f5a623; color: #0f2b3d;"
+              class="btn btn-primary save-btn"
               [disabled]="!isFormValid() || submitting">
               <span *ngIf="submitting" class="spinner-border spinner-border-sm me-2"></span>
               <i class="fas fa-save me-1" *ngIf="!submitting"></i>Guardar
             </button>
-          </div>
-          <div *ngIf="!isFormValid()" class="mt-2 text-center">
-            <small class="text-muted">
-              <i class="fas fa-lock me-1"></i> Completa todos los campos correctamente para guardar
-              <span class="badge bg-warning text-dark ms-1">
-                {{ 6 - (validations.name.valid ? 1 : 0) - (validations.lastName.valid ? 1 : 0) - (validations.email.valid ? 1 : 0) - (validations.age.valid ? 1 : 0) - (validations.region.valid ? 1 : 0) - (validations.commune.valid ? 1 : 0) }} faltan
-              </span>
-            </small>
           </div>
         </form>
       </div>
