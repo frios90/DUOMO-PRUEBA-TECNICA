@@ -14,100 +14,100 @@ public class RegionDataUtil {
 
     private static final List<Region> REGIONS = Arrays.asList(
         new Region("1", "Arica y Parinacota Region", Arrays.asList(
-            new Commune("1-1", "Arica"),
-            new Commune("1-2", "Camarones"),
-            new Commune("1-3", "General Lagos"),
-            new Commune("1-4", "Putre")
+            new Commune("1001", "Arica"),
+            new Commune("1002", "Camarones"),
+            new Commune("1003", "General Lagos"),
+            new Commune("1004", "Putre")
         )),
         new Region("2", "Tarapacá Region", Arrays.asList(
-            new Commune("2-1", "Iquique"),
-            new Commune("2-2", "Alto Hospicio"),
-            new Commune("2-3", "Pozo Almonte"),
-            new Commune("2-4", "Colchane")
+            new Commune("2001", "Iquique"),
+            new Commune("2002", "Alto Hospicio"),
+            new Commune("2003", "Pozo Almonte"),
+            new Commune("2004", "Colchane")
         )),
         new Region("3", "Antofagasta Region", Arrays.asList(
-            new Commune("3-1", "Antofagasta"),
-            new Commune("3-2", "Calama"),
-            new Commune("3-3", "Tocopilla"),
-            new Commune("3-4", "Mejillones")
+            new Commune("3001", "Antofagasta"),
+            new Commune("3002", "Calama"),
+            new Commune("3003", "Tocopilla"),
+            new Commune("3004", "Mejillones")
         )),
         new Region("4", "Atacama Region", Arrays.asList(
-            new Commune("4-1", "Copiapó"),
-            new Commune("4-2", "Vallenar"),
-            new Commune("4-3", "Caldera"),
-            new Commune("4-4", "Chañaral")
+            new Commune("4001", "Copiapó"),
+            new Commune("4002", "Vallenar"),
+            new Commune("4003", "Caldera"),
+            new Commune("4004", "Chañaral")
         )),
         new Region("5", "Coquimbo Region", Arrays.asList(
-            new Commune("5-1", "La Serena"),
-            new Commune("5-2", "Coquimbo"),
-            new Commune("5-3", "Ovalle"),
-            new Commune("5-4", "Illapel")
+            new Commune("5001", "La Serena"),
+            new Commune("5002", "Coquimbo"),
+            new Commune("5003", "Ovalle"),
+            new Commune("5004", "Illapel")
         )),
         new Region("6", "Valparaíso Region", Arrays.asList(
-            new Commune("6-1", "Valparaíso"),
-            new Commune("6-2", "Viña del Mar"),
-            new Commune("6-3", "Quilpué"),
-            new Commune("6-4", "Villa Alemana")
+            new Commune("6001", "Valparaíso"),
+            new Commune("6002", "Viña del Mar"),
+            new Commune("6003", "Quilpué"),
+            new Commune("6004", "Villa Alemana")
         )),
         new Region("7", "Santiago Metropolitan Region", Arrays.asList(
-            new Commune("7-1", "Santiago"),
-            new Commune("7-2", "Providencia"),
-            new Commune("7-3", "Las Condes"),
-            new Commune("7-4", "Vitacura")
+            new Commune("7001", "Santiago"),
+            new Commune("7002", "Providencia"),
+            new Commune("7003", "Las Condes"),
+            new Commune("7004", "Vitacura")
         )),
         new Region("8", "O'Higgins Region", Arrays.asList(
-            new Commune("8-1", "Rancagua"),
-            new Commune("8-2", "San Fernando"),
-            new Commune("8-3", "Pichilemu"),
-            new Commune("8-4", "Santa Cruz")
+            new Commune("8001", "Rancagua"),
+            new Commune("8002", "San Fernando"),
+            new Commune("8003", "Pichilemu"),
+            new Commune("8004", "Santa Cruz")
         )),
         new Region("9", "Maule Region", Arrays.asList(
-            new Commune("9-1", "Talca"),
-            new Commune("9-2", "Curicó"),
-            new Commune("9-3", "Linares"),
-            new Commune("9-4", "Constitución")
+            new Commune("9001", "Talca"),
+            new Commune("9002", "Curicó"),
+            new Commune("9003", "Linares"),
+            new Commune("9004", "Constitución")
         )),
         new Region("10", "Ñuble Region", Arrays.asList(
-            new Commune("10-1", "Chillán"),
-            new Commune("10-2", "Bulnes"),
-            new Commune("10-3", "San Carlos"),
-            new Commune("10-4", "Yungay")
+            new Commune("10001", "Chillán"),
+            new Commune("10002", "Bulnes"),
+            new Commune("10003", "San Carlos"),
+            new Commune("10004", "Yungay")
         )),
         new Region("11", "Biobío Region", Arrays.asList(
-            new Commune("11-1", "Concepción"),
-            new Commune("11-2", "Talcahuano"),
-            new Commune("11-3", "Los Ángeles"),
-            new Commune("11-4", "Chillán")
+            new Commune("11001", "Concepción"),
+            new Commune("11002", "Talcahuano"),
+            new Commune("11003", "Los Ángeles"),
+            new Commune("11004", "Chillán")
         )),
         new Region("12", "Araucanía Region", Arrays.asList(
-            new Commune("12-1", "Temuco"),
-            new Commune("12-2", "Angol"),
-            new Commune("12-3", "Villarrica"),
-            new Commune("12-4", "Pucón")
+            new Commune("12001", "Temuco"),
+            new Commune("12002", "Angol"),
+            new Commune("12003", "Villarrica"),
+            new Commune("12004", "Pucón")
         )),
         new Region("13", "Los Ríos Region", Arrays.asList(
-            new Commune("13-1", "Valdivia"),
-            new Commune("13-2", "La Unión"),
-            new Commune("13-3", "Río Bueno"),
-            new Commune("13-4", "Panguipulli")
+            new Commune("13001", "Valdivia"),
+            new Commune("13002", "La Unión"),
+            new Commune("13003", "Río Bueno"),
+            new Commune("13004", "Panguipulli")
         )),
         new Region("14", "Los Lagos Region", Arrays.asList(
-            new Commune("14-1", "Puerto Montt"),
-            new Commune("14-2", "Osorno"),
-            new Commune("14-3", "Castro"),
-            new Commune("14-4", "Ancud")
+            new Commune("14001", "Puerto Montt"),
+            new Commune("14002", "Osorno"),
+            new Commune("14003", "Castro"),
+            new Commune("14004", "Ancud")
         )),
         new Region("15", "Aysén Region", Arrays.asList(
-            new Commune("15-1", "Coyhaique"),
-            new Commune("15-2", "Puerto Aysén"),
-            new Commune("15-3", "Chile Chico"),
-            new Commune("15-4", "Cochrane")
+            new Commune("15001", "Coyhaique"),
+            new Commune("15002", "Puerto Aysén"),
+            new Commune("15003", "Chile Chico"),
+            new Commune("15004", "Cochrane")
         )),
         new Region("16", "Magallanes Region", Arrays.asList(
-            new Commune("16-1", "Punta Arenas"),
-            new Commune("16-2", "Puerto Natales"),
-            new Commune("16-3", "Porvenir"),
-            new Commune("16-4", "Cabo de Hornos")
+            new Commune("16001", "Punta Arenas"),
+            new Commune("16002", "Puerto Natales"),
+            new Commune("16003", "Porvenir"),
+            new Commune("16004", "Cabo de Hornos")
         ))
     );
 
