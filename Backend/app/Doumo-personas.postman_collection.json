@@ -1,0 +1,102 @@
+{
+	"info": {
+		"_postman_id": "513c68b3-9470-4d52-b478-e1da5f195da5",
+		"name": "Doumo-personas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15487872",
+		"_collection_link": "https://frios2.postman.co/workspace/Doumo-Api-Person-TEST~bb28398f-d0db-48a8-8f91-e7f10673c4ce/collection/15487872-513c68b3-9470-4d52-b478-e1da5f195da5?action=share&source=collection_link&creator=15487872"
+	},
+	"item": [
+		{
+			"name": "list",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "store",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Juan\",\n  \"lastName\": \"Pérez\",\n  \"email\": \"juan.perez@email.com\",\n  \"age\": 30,\n  \"regionId\": \"7\",\n  \"communeId\": \"7-1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/people",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"people"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/people/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"people",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/people/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"people",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

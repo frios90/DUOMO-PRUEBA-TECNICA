@@ -19,7 +19,6 @@ public class PersonServiceImpl implements PersonService {
 
     @Override
     public PersonResponse createPerson(PersonRequest request) {
-        // Validate that region and commune exist and match
         validateRegionAndCommune(request.getRegionId(), request.getCommuneId());
 
         Person person = new Person();
@@ -44,14 +43,14 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public PersonResponse getPersonById(String id) {
         Person person = personRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Person not found with id: " + id));
+                .orElseThrow(() -> new RuntimeException("Persona con id no encontrada: " + id));
         return convertToResponse(person);
     }
 
     @Override
     public void deletePerson(String id) {
         if (!personRepository.existsById(id)) {
-            throw new RuntimeException("Person not found with id: " + id);
+            throw new RuntimeException("Persona con id no encontrada: " + id);
         }
         personRepository.deleteById(id);
     }
