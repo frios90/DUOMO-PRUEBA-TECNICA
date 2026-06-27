@@ -13,24 +13,24 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PersonRequest {
-    @NotBlank(message = "Name is required")
+    @NotBlank(message = "El nombre es obligatorio")
     private String name;
 
-    @NotBlank(message = "Last name is required")
+    @NotBlank(message = "El apellido es obligatorio")
     private String lastName;
 
-    @NotBlank(message = "Email is required")
-    @Email(message = "Email must be valid")
+    @NotBlank(message = "El email es obligatorio")
+    @Email(message = "El email debe ser válido")
     private String email;
 
-    @NotNull(message = "Age is required")
-    @Min(value = 18, message = "Age must be 18 or older")
-    @Max(value = 150, message = "Invalid age")
+    @NotNull(message = "La edad es obligatoria")
+    @Min(value = 18, message = "La edad debe ser mayor o igual a 18 años")
+    @Max(value = 150, message = "Edad no válida")
     private Integer age;
 
-    @NotBlank(message = "Region is required")
+    @NotBlank(message = "La región es obligatoria")
     private String regionId;
 
-    @NotBlank(message = "Commune is required")
+    @NotBlank(message = "La comuna es obligatoria")
     private String communeId;
 }

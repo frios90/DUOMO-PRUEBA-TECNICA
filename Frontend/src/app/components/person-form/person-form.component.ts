@@ -185,6 +185,7 @@ export class PersonFormComponent implements OnInit {
     };
     this.communes = [];
     this.error = '';
+    this.progress = 0;
     Object.keys(this.validations).forEach(key => {
       this.validations[key as keyof typeof this.validations] = {
         valid: false,
