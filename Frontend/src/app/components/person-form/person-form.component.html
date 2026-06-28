@@ -12,8 +12,8 @@
           <div *ngIf="error" class="alert alert-danger">
             <i class="fas fa-exclamation-circle me-2"></i> {{ error }}
           </div>
-          <div class="row">
-            <div class="col-6 mb-3">
+          <div class="row g-3">
+            <div class="col-12 col-md-6">
               <label class="form-label"><i class="fas fa-user me-1"></i> Nombre *</label>
               <div class="input-group">
                 <input
@@ -33,13 +33,15 @@
                   <i *ngIf="!validations.name.touched" class="fas fa-minus text-muted"></i>
                 </span>
               </div>
-              <small *ngIf="!validations.name.valid && validations.name.touched" class="text-danger">
+              <small *ngIf="!validations.name.valid && validations.name.touched" class="text-danger d-block">
                 <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.name.message }}
               </small>
-              <small *ngIf="validations.name.valid && validations.name.touched" class="text-success"><i class="fas fa-check me-1"></i> Nombre válido</small>
+              <small *ngIf="validations.name.valid && validations.name.touched" class="text-success d-block">
+                <i class="fas fa-check me-1"></i> Nombre válido
+              </small>
             </div>
 
-            <div class="col-6 mb-3">
+            <div class="col-12 col-md-6">
               <label class="form-label"><i class="fas fa-user me-1"></i> Apellido *</label>
               <div class="input-group">
                 <input
@@ -59,15 +61,15 @@
                   <i *ngIf="!validations.lastName.touched" class="fas fa-minus text-muted"></i>
                 </span>
               </div>
-              <small *ngIf="!validations.lastName.valid && validations.lastName.touched" class="text-danger">
+              <small *ngIf="!validations.lastName.valid && validations.lastName.touched" class="text-danger d-block">
                 <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.lastName.message }}
               </small>
-              <small *ngIf="validations.lastName.valid && validations.lastName.touched" class="text-success">
+              <small *ngIf="validations.lastName.valid && validations.lastName.touched" class="text-success d-block">
                 <i class="fas fa-check me-1"></i> Apellido válido
               </small>
             </div>
 
-            <div class="col-6 mb-3">
+            <div class="col-12 col-md-6">
               <label class="form-label"><i class="fas fa-envelope me-1"></i> Email *</label>
               <div class="input-group">
                 <input
@@ -87,13 +89,15 @@
                   <i *ngIf="!validations.email.touched" class="fas fa-minus text-muted"></i>
                 </span>
               </div>
-              <small *ngIf="!validations.email.valid && validations.email.touched" class="text-danger">
+              <small *ngIf="!validations.email.valid && validations.email.touched" class="text-danger d-block">
                 <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.email.message }}
               </small>
-              <small *ngIf="validations.email.valid && validations.email.touched" class="text-success"><i class="fas fa-check me-1"></i> Email válido</small>
+              <small *ngIf="validations.email.valid && validations.email.touched" class="text-success d-block">
+                <i class="fas fa-check me-1"></i> Email válido
+              </small>
             </div>
 
-            <div class="col-6 mb-3">
+            <div class="col-12 col-md-6">
               <label class="form-label"><i class="fas fa-calendar me-1"></i> Edad *</label>
               <div class="input-group">
                 <input
@@ -114,15 +118,15 @@
                   <i *ngIf="!validations.age.touched" class="fas fa-minus text-muted"></i>
                 </span>
               </div>
-              <small *ngIf="!validations.age.valid && validations.age.touched" class="text-danger">
+              <small *ngIf="!validations.age.valid && validations.age.touched" class="text-danger d-block">
                 <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.age.message }}
               </small>
-              <small *ngIf="validations.age.valid && validations.age.touched" class="text-success">
+              <small *ngIf="validations.age.valid && validations.age.touched" class="text-success d-block">
                 <i class="fas fa-check me-1"></i> Edad válida
               </small>
             </div>
 
-            <div class="mb-3">
+            <div class="col-12">
               <label class="form-label"><i class="fas fa-map-marker-alt me-1"></i> Región *</label>
               <div class="input-group">
                 <select
@@ -144,15 +148,15 @@
                   <i *ngIf="!validations.region.touched" class="fas fa-minus text-muted"></i>
                 </span>
               </div>
-              <small *ngIf="!validations.region.valid && validations.region.touched" class="text-danger">
+              <small *ngIf="!validations.region.valid && validations.region.touched" class="text-danger d-block">
                 <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.region.message }}
               </small>
-              <small *ngIf="validations.region.valid && validations.region.touched" class="text-success">
+              <small *ngIf="validations.region.valid && validations.region.touched" class="text-success d-block">
                 <i class="fas fa-check me-1"></i> Región seleccionada
               </small>
             </div>
 
-            <div class="mb-3">
+            <div class="col-12">
               <label class="form-label"><i class="fas fa-map-pin me-1"></i> Comuna *</label>
               <div class="input-group">
                 <select
@@ -173,8 +177,12 @@
                   <i *ngIf="!validations.commune.touched" class="fas fa-minus text-muted"></i>
                 </span>
               </div>
-              <small *ngIf="!validations.commune.valid && validations.commune.touched" class="text-danger"><i class="fas fa-exclamation-triangle me-1"></i> {{ validations.commune.message }}</small>
-              <small *ngIf="validations.commune.valid && validations.commune.touched" class="text-success"><i class="fas fa-check me-1"></i> Comuna seleccionada</small>
+              <small *ngIf="!validations.commune.valid && validations.commune.touched" class="text-danger d-block">
+                <i class="fas fa-exclamation-triangle me-1"></i> {{ validations.commune.message }}
+              </small>
+              <small *ngIf="validations.commune.valid && validations.commune.touched" class="text-success d-block">
+                <i class="fas fa-check me-1"></i> Comuna seleccionada
+              </small>
             </div>
           </div>
           <div class="mb-4 progress-box">

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Space+Mono:wght@400;700&display=swap');
 
 :root {
@@ -20,7 +19,6 @@ body {
 h1,h2,h3,h4,h5,h6,
 .card-title,
 .modal-title {
-
     font-weight: 800;
     text-transform: uppercase;
     color: var(--duomo-black);
@@ -38,7 +36,6 @@ h1,h2,h3,h4,h5,h6,
     background: var(--duomo-yellow);
     color: black;
     border: none;
-
     font-weight: 800;
     text-transform: uppercase;
 }
@@ -68,7 +65,6 @@ label {
 
 .btn {
     border-radius: 10px;
-
     font-weight: 700;
     text-transform: uppercase;
 }
@@ -102,7 +98,6 @@ label {
 
 .table thead th {
     border: none;
-
     text-transform: uppercase;
     font-size: .9rem;
 }
@@ -141,11 +136,181 @@ label {
     background: white;
     padding: 2rem;
     border-radius: 0px 0px 10px 10px;
-    padding: 50px 300px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
 }
 
 .crud-title {
     font-size: 2rem;
     margin-bottom: 2rem;
+}
+
+@media (max-width: 1200px) {
+    .crud-container {
+        padding: 2rem 150px;
+    }
+}
+
+@media (max-width: 992px) {
+    .crud-container {
+        padding: 2rem 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .crud-container {
+        padding: 1.5rem 50px;
+        border-radius: 0;
+        margin: 0;
+    }
+
+    .crud-title {
+        font-size: 1.5rem;
+    }
+
+    .form-control,
+    .form-select {
+        padding: .5rem;
+        font-size: .9rem;
+    }
+
+    .table thead th {
+        font-size: .8rem;
+    }
+
+    .btn {
+        font-size: .85rem;
+        padding: .5rem 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .crud-container {
+        padding: 1rem 15px;
+        border-radius: 0;
+    }
+
+    .crud-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .card-header {
+        font-size: .9rem;
+        padding: .75rem 1rem;
+    }
+
+    .form-control,
+    .form-select {
+        padding: .4rem .5rem;
+        font-size: .85rem;
+    }
+
+    .input-group-text {
+        padding: .4rem .5rem;
+        font-size: .85rem;
+    }
+
+    label {
+        font-size: .85rem;
+    }
+
+    .table {
+        font-size: .8rem;
+    }
+
+    .table thead th {
+        font-size: .7rem;
+        padding: .5rem .25rem;
+    }
+
+    .table td {
+        padding: .5rem .25rem;
+    }
+
+    .btn {
+        font-size: .8rem;
+        padding: .4rem .75rem;
+        border-radius: 8px;
+    }
+
+    small {
+        font-size: .7rem;
+    }
+
+    .modal-header {
+        padding: .75rem 1rem;
+    }
+
+    .modal-title {
+        font-size: 1rem;
+    }
+
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-footer {
+        padding: .75rem 1rem;
+    }
+
+    .modal-footer .btn {
+        font-size: .75rem;
+        padding: .3rem .6rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .crud-container {
+        padding: .75rem 10px;
+    }
+
+    .row.g-3 {
+        --bs-gutter-y: 0.75rem;
+        --bs-gutter-x: 0.75rem;
+    }
+
+    .form-control,
+    .form-select {
+        padding: .3rem .4rem;
+        font-size: .8rem;
+    }
+
+    .input-group-text {
+        padding: .3rem .4rem;
+        font-size: .8rem;
+    }
+
+    .btn {
+        font-size: .7rem;
+        padding: .3rem .6rem;
+    }
+}
+
+.is-valid {
+    border-color: #198754 !important;
+}
+
+.is-invalid {
+    border-color: #dc3545 !important;
+}
+
+.text-success {
+    color: #198754 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+}
+
+select.form-control {
+    appearance: auto;
+    -webkit-appearance: auto;
+}
+
+small.d-block {
+    margin-top: 0.25rem;
+}
+
+    .form-label i {
+    width: 1.1rem;
 }
