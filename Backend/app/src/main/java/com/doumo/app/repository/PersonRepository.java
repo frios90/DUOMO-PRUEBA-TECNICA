@@ -1,6 +1,8 @@
 package com.doumo.app.repository;
 
 import com.doumo.app.model.Person;
+import com.doumo.app.util.PersonDataUtil;
+import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -14,6 +16,14 @@ import java.util.concurrent.atomic.AtomicLong;
 public class PersonRepository {
     private final Map<String, Person> persons = new ConcurrentHashMap<>();
     private final AtomicLong idGenerator = new AtomicLong(1);
+
+    @PostConstruct
+    public void init() {
+        List<Person> sampleUsers = PersonDataUtil.getSampleUsers();
+        for (Person person : sampleUsers) {
+            save(person);
+        }
+    }
 
     public Person save(Person person) {
         if (person.getId() == null || person.getId().isEmpty()) {

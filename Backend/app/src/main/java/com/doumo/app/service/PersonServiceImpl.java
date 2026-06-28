@@ -1,5 +1,6 @@
 package com.doumo.app.service;
 
+import com.doumo.app.dto.PageListResponse;
 import com.doumo.app.dto.PersonRequest;
 import com.doumo.app.dto.PersonResponse;
 import com.doumo.app.model.Person;
@@ -73,6 +74,32 @@ public class PersonServiceImpl implements PersonService {
                 person.getAge(),
                 regionName,
                 communeName
+        );
+    }
+
+    @Override
+    public PageListResponse<PersonResponse> pageListPeople(int page, int size) {
+        List<Person> allPeople = personRepository.findAll();
+        int total = allPeople.size();
+        int totalPages = (int) Math.ceil((double) total / size);
+
+        int start = Math.min(page * size, total);
+        int end = Math.min(start + size, total);
+
+        List<Person> paginatedList = allPeople.subList(start, end);
+
+        List<PersonResponse> content = paginatedList.stream()
+                .map(this::convertToResponse)
+                .collect(Collectors.toList());
+
+        return new PageListResponse<>(
+                content,
+                page,
+                size,
+                total,
+                totalPages,
+                page >= totalPages - 1,
+                page == 0
         );
     }
 }

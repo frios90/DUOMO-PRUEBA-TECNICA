@@ -1,5 +1,6 @@
 package com.doumo.app.controller;
 
+import com.doumo.app.dto.PageListResponse;
 import com.doumo.app.dto.PersonRequest;
 import com.doumo.app.dto.PersonResponse;
 import com.doumo.app.service.PersonService;
@@ -29,6 +30,14 @@ public class PersonController {
     public ResponseEntity<List<PersonResponse>> listPeople() {
         List<PersonResponse> people = personService.listPeople();
         return ResponseEntity.ok(people);
+    }
+
+    @GetMapping("/paginate")
+    public ResponseEntity<PageListResponse<PersonResponse>> pageListPeople(
+        @RequestParam(defaultValue = "0") int page,
+        @RequestParam(defaultValue = "10") int size) {
+        PageListResponse<PersonResponse> pageResponse = personService.pageListPeople(page, size);
+        return ResponseEntity.ok(pageResponse);
     }
 
     @GetMapping("/{id}")
