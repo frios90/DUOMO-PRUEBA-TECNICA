@@ -5,7 +5,7 @@
   </div>
 
   <div class="mb-3">
-    <div class="input-group" style="max-width: 300px;">
+    <div class="input-group" style="max-width: 900px;">
       <span class="input-group-text"><i class="fas fa-search"></i></span>
       <input type="text" class="form-control" placeholder="Buscar..." [(ngModel)]="searchTerm" (input)="onSearch()">
       <button *ngIf="searchTerm" class="btn btn-outline-secondary" type="button" (click)="clearSearch()">
@@ -31,14 +31,14 @@
       <table class="table table-hover table-striped">
         <thead class="table-dark">
           <tr>
-            <th>#</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Email</th>
-            <th>Edad</th>
-            <th>Región</th>
-            <th>Comuna</th>
-            <th>Acciones</th>
+            <th style="width: 3%">#</th>
+            <th style="width: 17%">Nombre</th>
+            <th style="width: 17%">Apellido</th>
+            <th style="width: 17%">Email</th>
+            <th style="width: 5%; text-align: center;">Edad</th>
+            <th style="width: 18%">Región</th>
+            <th style="width: 15%">Comuna</th>
+            <th style="width: 10%">Acciones</th>
           </tr>
         </thead>
         <tbody>
@@ -48,14 +48,14 @@
             </td>
           </tr>
           <tr *ngFor="let person of people; let i = index">
-            <td>{{ person.id }}</td>
-            <td>{{ person.name }}</td>
-            <td>{{ person.lastName }}</td>
-            <td>{{ person.email }}</td>
-            <td>{{ person.age }}</td>
-            <td>{{ person.regionName }}</td>
-            <td>{{ person.communeName }}</td>
-            <td>
+            <td style="width: 3%">{{ person.id }}</td>
+            <td style="width: 17%">{{ person.name }}</td>
+            <td style="width: 17%">{{ person.lastName }}</td>
+            <td style="width: 17%">{{ person.email }}</td>
+            <td style="width: 5%; text-align: center">{{ person.age }}</td>
+            <td style="width: 18%">{{ person.regionName }}</td>
+            <td style="width: 15%">{{ person.communeName }}</td>
+            <td style="width: 10%">
               <button class="btn btn-sm btn-danger" (click)="deletePerson(person.id!)"><i class="fas fa-trash"></i> eliminar</button>
             </td>
           </tr>
