@@ -1,0 +1,5 @@
+2026-06-29 17:04:21 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat-1].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-06-29 17:04:21 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-06-29 17:04:21 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2026-06-29 17:04:21 [http-nio-8080-exec-2] INFO  com.doumo.app.aspect.LoggingAspect - Iniciando [PersonServiceImpl.pageListPeople] | Args: [1, 5, null]
+2026-06-29 17:04:21 [http-nio-8080-exec-2] INFO  com.doumo.app.aspect.LoggingAspect - Fin [PersonServiceImpl.pageListPeople] ejecutado en 2 ms
