@@ -111,8 +111,7 @@ public class RegionDataUtil {
         ))
     );
 
-    private static final Map<String, Region> REGIONS_MAP = REGIONS.stream()
-            .collect(Collectors.toMap(Region::getId, r -> r));
+    private static final Map<String, Region> REGIONS_MAP = REGIONS.stream().collect(Collectors.toMap(Region::getId, r -> r));
 
     public static List<Region> getRegions() {
         return REGIONS;
@@ -131,10 +130,10 @@ public class RegionDataUtil {
         Region region = REGIONS_MAP.get(regionId);
         if (region != null) {
             return region.getCommunes().stream()
-                    .filter(c -> c.getId().equals(communeId))
-                    .map(Commune::getName)
-                    .findFirst()
-                    .orElse(null);
+                .filter(c -> c.getId().equals(communeId))
+                .map(Commune::getName)
+                .findFirst()
+                .orElse(null);
         }
         return null;
     }
@@ -142,8 +141,6 @@ public class RegionDataUtil {
     public static boolean validateRegionAndCommune(String regionId, String communeId) {
         Region region = REGIONS_MAP.get(regionId);
         if (region == null) return false;
-
-        return region.getCommunes().stream()
-                .anyMatch(c -> c.getId().equals(communeId));
+        return region.getCommunes().stream().anyMatch(c -> c.getId().equals(communeId));
     }
 }

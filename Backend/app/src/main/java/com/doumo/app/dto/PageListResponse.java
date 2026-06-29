@@ -17,4 +17,5 @@ public class PageListResponse<T> {
     private int totalPages;
     private boolean last;
     private boolean first;
+    private String search;
 }

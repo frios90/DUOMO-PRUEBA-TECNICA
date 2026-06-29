@@ -11,5 +11,5 @@ public interface PersonService {
     List<PersonResponse> listPeople();
     PersonResponse getPersonById(String id);
     void deletePerson(String id);
-    PageListResponse<PersonResponse> pageListPeople(int page, int size);
+    PageListResponse<PersonResponse> pageListPeople(int page, int size, String search);
 }

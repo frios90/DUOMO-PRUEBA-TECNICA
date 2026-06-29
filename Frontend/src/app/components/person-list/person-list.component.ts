@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { PersonService } from '../../services/person.service';
 import { Person } from '../../models/person.model';
 import { PersonFormComponent } from '../person-form/person-form.component';
@@ -9,7 +10,7 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-person-list',
   standalone: true,
-  imports: [CommonModule, PersonFormComponent],
+  imports: [CommonModule, FormsModule, PersonFormComponent],
   templateUrl: './person-list.component.html',
   styleUrls: ['./person-list.component.css']
 })
@@ -17,14 +18,13 @@ export class PersonListComponent implements OnInit {
   people: Person[] = [];
   loading = false;
   error = '';
-
   currentPage: number = 0;
   pageSize: number = 10;
   totalElements: number = 0;
   totalPages: number = 0;
   first: boolean = true;
   last: boolean = true;
-
+  searchTerm: string = '';
   Math = Math;
 
   constructor(private personService: PersonService) {}
@@ -35,8 +35,7 @@ export class PersonListComponent implements OnInit {
 
   loadPeople(): void {
     this.loading = true;
-
-    this.personService.getPaginatePeople(this.currentPage, this.pageSize)
+    this.personService.getPaginatePeople(this.currentPage, this.pageSize, this.searchTerm)
       .subscribe({
         next: (data: Paginate) => {
           this.people = data.content;
@@ -52,6 +51,17 @@ export class PersonListComponent implements OnInit {
           console.error(err);
         }
       });
+  }
+
+  onSearch(): void {
+    this.currentPage = 0;
+    this.loadPeople();
+  }
+
+  clearSearch(): void {
+    this.searchTerm = '';
+    this.currentPage = 0;
+    this.loadPeople();
   }
 
   previousPage(): void {

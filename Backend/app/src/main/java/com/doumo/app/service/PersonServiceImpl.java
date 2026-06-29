@@ -37,14 +37,13 @@ public class PersonServiceImpl implements PersonService {
     @Override
     public List<PersonResponse> listPeople() {
         return personRepository.findAll().stream()
-                .map(this::convertToResponse)
-                .collect(Collectors.toList());
+            .map(this::convertToResponse)
+            .collect(Collectors.toList());
     }
 
     @Override
     public PersonResponse getPersonById(String id) {
-        Person person = personRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Persona con id no encontrada: " + id));
+        Person person = personRepository.findById(id).orElseThrow(() -> new RuntimeException("Persona con id no encontrada: " + id));
         return convertToResponse(person);
     }
 
@@ -67,39 +66,35 @@ public class PersonServiceImpl implements PersonService {
         String communeName = RegionDataUtil.getCommuneName(person.getRegionId(), person.getCommuneId());
 
         return new PersonResponse(
-                person.getId(),
-                person.getName(),
-                person.getLastName(),
-                person.getEmail(),
-                person.getAge(),
-                regionName,
-                communeName
+            person.getId(),
+            person.getName(),
+            person.getLastName(),
+            person.getEmail(),
+            person.getAge(),
+            regionName,
+            communeName
         );
     }
 
     @Override
-    public PageListResponse<PersonResponse> pageListPeople(int page, int size) {
-        List<Person> allPeople = personRepository.findAll();
-        int total = allPeople.size();
+    public PageListResponse<PersonResponse> pageListPeople(int page, int size, String search) {
+        List<Person> paginatedList = personRepository.findPaginated(page, size, search);
+        int total = personRepository.getTotalCount(search);
         int totalPages = (int) Math.ceil((double) total / size);
 
-        int start = Math.min(page * size, total);
-        int end = Math.min(start + size, total);
-
-        List<Person> paginatedList = allPeople.subList(start, end);
-
         List<PersonResponse> content = paginatedList.stream()
-                .map(this::convertToResponse)
-                .collect(Collectors.toList());
+            .map(this::convertToResponse)
+            .collect(Collectors.toList());
 
         return new PageListResponse<>(
-                content,
-                page,
-                size,
-                total,
-                totalPages,
-                page >= totalPages - 1,
-                page == 0
+            content,
+            page,
+            size,
+            total,
+            totalPages,
+            page >= totalPages - 1,
+            page == 0,
+            search
         );
     }
 }

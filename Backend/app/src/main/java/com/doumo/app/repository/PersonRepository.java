@@ -11,17 +11,20 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
+import java.util.stream.Collectors;
 
 @Repository
 public class PersonRepository {
     private final Map<String, Person> persons = new ConcurrentHashMap<>();
-    private final AtomicLong idGenerator = new AtomicLong(1);
+    private final AtomicLong idGenerator = new AtomicLong(21);
 
     @PostConstruct
     public void init() {
-        List<Person> sampleUsers = PersonDataUtil.getSampleUsers();
-        for (Person person : sampleUsers) {
-            save(person);
+        if (persons.isEmpty()) {
+            List<Person> sampleUsers = PersonDataUtil.getSampleUsers();
+            for (Person person : sampleUsers) {
+                persons.put(person.getId(), person);
+            }
         }
     }
 
@@ -35,6 +38,33 @@ public class PersonRepository {
 
     public List<Person> findAll() {
         return new ArrayList<>(persons.values());
+    }
+
+    public List<Person> findPaginated(int page, int size, String search) {
+        return persons.values().stream()
+            .filter(
+                p -> search == null || search.isEmpty() ||
+                p.getName().toLowerCase().contains(search.toLowerCase()) ||
+                p.getLastName().toLowerCase().contains(search.toLowerCase()) ||
+                p.getEmail().toLowerCase().contains(search.toLowerCase())
+            )
+            .sorted((p1, p2) -> Integer.parseInt(p2.getId()) - Integer.parseInt(p1.getId()))
+            .skip((long) page * size)
+            .limit(size)
+            .collect(Collectors.toList());
+    }
+
+    public int getTotalCount(String search) {
+        if (search == null || search.isEmpty()) {
+            return persons.size();
+        }
+        return (int) persons.values().stream()
+            .filter(
+                p -> p.getName().toLowerCase().contains(search.toLowerCase()) ||
+                p.getLastName().toLowerCase().contains(search.toLowerCase()) ||
+                p.getEmail().toLowerCase().contains(search.toLowerCase())
+            )
+            .count();
     }
 
     public Optional<Person> findById(String id) {

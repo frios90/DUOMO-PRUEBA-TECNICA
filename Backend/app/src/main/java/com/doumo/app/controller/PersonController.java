@@ -34,9 +34,10 @@ public class PersonController {
 
     @GetMapping("/paginate")
     public ResponseEntity<PageListResponse<PersonResponse>> pageListPeople(
-        @RequestParam(defaultValue = "0") int page,
-        @RequestParam(defaultValue = "10") int size) {
-        PageListResponse<PersonResponse> pageResponse = personService.pageListPeople(page, size);
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(required = false) String search) {
+        PageListResponse<PersonResponse> pageResponse = personService.pageListPeople(page, size, search);
         return ResponseEntity.ok(pageResponse);
     }
 
