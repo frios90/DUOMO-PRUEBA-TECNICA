@@ -19,7 +19,7 @@ export class PersonListComponent implements OnInit {
   loading = false;
   error = '';
   currentPage: number = 0;
-  pageSize: number = 10;
+  pageSize: number = 5;
   totalElements: number = 0;
   totalPages: number = 0;
   first: boolean = true;
